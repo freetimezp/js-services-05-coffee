@@ -1,9 +1,9 @@
 import React from 'react';
 import "./header.css";
 
-import logo from '../../src/assets/logo.png';
-import { links } from '../../src/Data';
-
+import logo from '../../../src/assets/logo.png';
+import { links } from '../../Data';
+ 
 import { FaStream } from 'react-icons/fa';
 
 const Header = () => {
