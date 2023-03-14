@@ -4,7 +4,7 @@ import "./header.css";
 import logo from '../../../src/assets/logo.png';
 import { links } from '../../Data';
  
-import { FaStream } from 'react-icons/fa';
+import { FaBuffer } from "react-icons/fa";
 
 const Header = () => {
     return (
@@ -27,7 +27,7 @@ const Header = () => {
                 </div>
 
                 <div className="nav__toggle">
-                    <FaStream />
+                    <FaBuffer />
                 </div>
             </nav>
         </header>
