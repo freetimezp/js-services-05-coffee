@@ -144,7 +144,8 @@ img {
 
 .section__title {
   font-size: var(--big-font-size);
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .section__title::before {
@@ -157,7 +158,10 @@ img {
   margin-bottom: 0.5rem;
 }
 
-
+.title-left {
+  text-align: left;
+  margin-bottom: 1rem;
+}
 
 
 
