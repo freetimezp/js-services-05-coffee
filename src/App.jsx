@@ -12,6 +12,7 @@ import Gallery from './components/gallery/Gallery';
 import Offer from './components/offer/Offer';
 import Team from './components/team/Team';
 import Reservation from './components/reservation/Reservation';
+import Testimonials from './components/testimonials/Testimonials';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <Offer />
       <Team />
       <Reservation />
+      <Testimonials />
     </>
   );
 }
