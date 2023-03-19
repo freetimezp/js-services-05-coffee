@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import "./header.css";
+import { Link } from 'react-scroll';
+import { animateScroll } from 'react-scroll';
 
 import logo from '../../../src/assets/logo.png';
 import { links } from '../../Data';
  
 import { FaBuffer } from "react-icons/fa";
+
+import "./header.css";
 
 const Header = () => {
     const [scrollHeader, setScrollHeader] = useState(false);
@@ -17,6 +20,10 @@ const Header = () => {
         }
     };
 
+    const scrollTop = () => {
+        animateScroll.scrollToTop();
+    };
+
     useEffect(() => {
         window.addEventListener('scroll', changeHeader);
     }, []);
@@ -24,16 +31,26 @@ const Header = () => {
     return (
         <header className={`${scrollHeader ? 'scroll-header' : ''} header`}>
             <nav className="nav container">
-                <a href="/" className="nav__logo">
+                <Link to="/" onClick={scrollTop} className="nav__logo">
                     <img src={logo} alt="logo" className="nav__logo-img" />
-                </a>
+                </Link>
 
                 <div className="nav__menu">
                     <ul className="nav__list">
                         {links.map(({name, path}, index) => {
                             return (
                                 <li className="nav__item" key={index}>
-                                    <a href={path} className="nav__link">{name}</a>
+                                    <Link 
+                                        to={path} 
+                                        className="nav__link"
+                                        spy={true}
+                                        hashSpy={true}
+                                        smooth={true}
+                                        offset={-60}
+                                        duration={500}
+                                    >
+                                        {name}
+                                    </Link>
                                 </li>
                             )
                         })}
