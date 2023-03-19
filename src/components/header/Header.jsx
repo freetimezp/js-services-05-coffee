@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./header.css";
 
 import logo from '../../../src/assets/logo.png';
@@ -7,8 +7,22 @@ import { links } from '../../Data';
 import { FaBuffer } from "react-icons/fa";
 
 const Header = () => {
+    const [scrollHeader, setScrollHeader] = useState(false);
+
+    const changeHeader = () => {
+        if(window.scrollY >= 80) {
+            setScrollHeader(true);
+        }else{
+            setScrollHeader(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', changeHeader);
+    }, []);
+
     return (
-        <header className='header'>
+        <header className={`${scrollHeader ? 'scroll-header' : ''} header`}>
             <nav className="nav container">
                 <a href="/" className="nav__logo">
                     <img src={logo} alt="logo" className="nav__logo-img" />
