@@ -58,6 +58,19 @@
   --transition: ease-in-out;
 }
 
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--first-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(27, 43%, 52%);
+}
+
 /*=================================== 
 #RESET
 ===================================*/
@@ -66,6 +79,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 input,

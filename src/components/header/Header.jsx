@@ -11,6 +11,7 @@ import "./header.css";
 
 const Header = () => {
     const [scrollHeader, setScrollHeader] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
 
     const changeHeader = () => {
         if(window.scrollY >= 80) {
@@ -35,7 +36,7 @@ const Header = () => {
                     <img src={logo} alt="logo" className="nav__logo-img" />
                 </Link>
 
-                <div className="nav__menu">
+                <div className={`${showMenu ? 'show-menu' : ''} nav__menu`}>
                     <ul className="nav__list">
                         {links.map(({name, path}, index) => {
                             return (
@@ -48,6 +49,7 @@ const Header = () => {
                                         smooth={true}
                                         offset={-60}
                                         duration={500}
+                                        onClick={() => setShowMenu(!showMenu)}
                                     >
                                         {name}
                                     </Link>
@@ -57,7 +59,7 @@ const Header = () => {
                     </ul>
                 </div>
 
-                <div className="nav__toggle">
+                <div className="nav__toggle" onClick={() => setShowMenu(!showMenu)}>
                     <FaBuffer />
                 </div>
             </nav>
