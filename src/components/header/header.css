@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .nav__logo-img {
@@ -60,6 +61,6 @@
 }
 
 .active {
-    color: var(--first-color);
+    color: var(--first-color) !important;
 }
 

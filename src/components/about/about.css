@@ -5,12 +5,16 @@
 .about__grid {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    column-gap: 3rem;
+    gap: 3rem;
 }
 
 .about__img-wrapper {
     position: relative;
     padding-left: 1.5rem;
+}
+
+.about__img {
+    width: 100%;
 }
 
 .about__img-wrapper::before {
